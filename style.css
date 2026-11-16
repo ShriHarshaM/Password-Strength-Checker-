@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --panel: #131b30;
+  --panel-soft: #19243c;
+  --text: #f3f6ff;
+  --muted: #9ba8c3;
+  --line: #2b3855;
+  --accent: #8b7cff;
+  --good: #45d6a1;
+  --warn: #ffc66d;
+  --bad: #ff7185;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; padding: 42px 18px;
+  background: radial-gradient(circle at 15% 10%, #1a2850 0, transparent 35%), var(--bg);
+  color: var(--text); font-family: 'DM Sans', sans-serif;
+  display: grid; place-items: center;
+}
+.app { width: min(100%, 680px); }
+.top { display: flex; gap: 18px; align-items: center; margin: 0 0 28px; }
+.brand-mark {
+  width: 62px; height: 62px; display: grid; place-items: center;
+  border: 1px solid #46517b; border-radius: 18px;
+  background: linear-gradient(145deg, #292e61, #18223b); font-size: 29px;
+}
+.eyebrow { color: #a99eff; font-size: 11px; letter-spacing: 1.8px; font-weight: 700; margin: 0 0 7px; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font: 800 clamp(25px, 5vw, 34px) 'Manrope', sans-serif; margin-bottom: 5px; letter-spacing: -1px; }
+.subtitle { color: var(--muted); margin: 0; font-size: 14px; }
+.panel {
+  background: linear-gradient(160deg, #17213a, var(--panel) 55%);
+  border: 1px solid var(--line); border-radius: 22px; padding: clamp(22px, 5vw, 34px);
+  box-shadow: 0 24px 70px #0005;
+}
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 27px; }
+h2 { font: 700 22px 'Manrope', sans-serif; margin: 0; }
+.private-label { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.private-label span { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--good); margin-right: 5px; }
+label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 9px; }
+.password-wrap { display: flex; border: 1px solid #455274; border-radius: 12px; background: #0d1528; overflow: hidden; }
+input { min-width: 0; flex: 1; border: 0; outline: 0; padding: 16px; background: transparent; color: var(--text); font: 15px 'DM Sans', sans-serif; }
+input::placeholder { color: #6e7b98; }
+.password-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px #8b7cff22; }
+button { font: 600 13px 'DM Sans', sans-serif; cursor: pointer; }
+.show-btn { border: 0; padding: 0 17px; background: transparent; color: #b7adff; }
+.meter-head, .score-row { display: flex; justify-content: space-between; gap: 12px; }
+.meter-head { margin: 25px 0 10px; font-size: 13px; color: var(--muted); }
+.meter-head strong { color: var(--text); }
+.meter { height: 9px; background: #293550; border-radius: 20px; overflow: hidden; }
+#meter-fill { height: 100%; width: 0; background: var(--bad); border-radius: inherit; transition: width .25s, background .25s; }
+.score-row { color: var(--muted); font-size: 12px; margin: 10px 0 25px; }
+.checks { padding: 20px; background: #0e172a; border: 1px solid #26334f; border-radius: 14px; }
+h3 { font: 700 14px 'Manrope', sans-serif; margin-bottom: 14px; }
+ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 13px 18px; }
+li { color: var(--muted); font-size: 12px; display: flex; align-items: center; gap: 8px; }
+.check-icon { color: #75829e; font-size: 16px; line-height: 1; }
+li.pass { color: #d8f8eb; }
+li.pass .check-icon { color: var(--good); }
+.feedback { margin: 18px 0 0; padding: 13px 15px; border-radius: 10px; background: #202c47; color: #c5cfea; font-size: 12px; line-height: 1.6; }
+.clear-btn { margin-top: 17px; border: 1px solid #3a496b; background: transparent; color: #d1d8ec; border-radius: 9px; padding: 10px 14px; }
+.clear-btn:hover, .show-btn:hover { color: white; }
+footer { text-align: center; color: var(--muted); font-size: 11px; line-height: 1.6; padding: 22px 8px 0; }
+footer p { margin-bottom: 5px; }
+footer strong { color: #dce5ff; }
+.footnote { color: #71809e; }
+@media (max-width: 520px) {
+  body { padding: 28px 14px; }
+  .top { align-items: flex-start; }
+  .brand-mark { width: 48px; height: 48px; border-radius: 14px; font-size: 23px; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  ul { grid-template-columns: 1fr; }
+  .score-row { flex-direction: column; gap: 5px; }
+}
